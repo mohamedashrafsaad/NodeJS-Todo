@@ -2,7 +2,10 @@ var todoController = require('./controllers/todoController');
 var express = require('express');
 
 var app = express();
-const PORT = process.env.PORT||'3000';
+app.set( 'port', ( process.env.PORT || 5000 ));
+app.listen( app.get( 'port' ), function() {
+    console.log( 'Node server is running on port ' + app.get( 'port' ));
+    });
 app.set('view engine' , 'ejs');    //template engine
 
 app.use(express.static('./public'));   //static files
@@ -17,7 +20,6 @@ app.delete('*', cors())
 
 todoController(app);     //call controller
 
-app.listen(PORT);     //listen to port
 app.get('/', function (req,res) {
     res.redirect('/todo');        
 });
