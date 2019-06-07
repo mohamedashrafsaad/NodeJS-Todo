@@ -11,10 +11,7 @@ var todoSchema = new mongoose.Schema({
 var Todo = mongoose.model('Todo',todoSchema);
 var urlencodedparser = bodyparser.json();
 module.exports = function (app) {
-    app.get('/', function (req,res) {
-        res.send("ok")
-        
-    });
+    
     app.get('/todo', function (req,res) {
         res.header("Access-Control-Allow-Origin", "*");
         Todo.find({},function (err,data) {

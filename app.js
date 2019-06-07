@@ -18,4 +18,7 @@ app.delete('*', cors())
 todoController(app);     //call controller
 
 app.listen(PORT);     //listen to port
+app.get('/', function (req,res) {
+    res.redirect('/todo');        
+});
 console.log("you are listening to port 3000");
