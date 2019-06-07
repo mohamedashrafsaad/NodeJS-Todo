@@ -2,7 +2,7 @@ var todoController = require('./controllers/todoController');
 var express = require('express');
 
 var app = express();
-app.set( 'port', ( process.env.PORT || 5000 ));
+app.set( 'port', ( process.env.PORT || 3000 ));
 app.listen( app.get( 'port' ), function() {
     console.log( 'Node server is running on port ' + app.get( 'port' ));
     });
@@ -23,4 +23,3 @@ todoController(app);     //call controller
 app.get('/', function (req,res) {
     res.redirect('/todo');        
 });
-console.log("you are listening to port 3000");
