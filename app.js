@@ -2,9 +2,9 @@ var todoController = require('./controllers/todoController');
 var express = require('express');
 
 var app = express();
-var port = process.env.PORT || 3000;
+//var port = process.env.PORT || 3000;
 
-app.listen(port, function () {
+app.listen(process.env.PORT, function () {
     console.log(`Example app listening on port !`);
    });   //listen to port
 
